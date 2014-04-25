@@ -18,10 +18,10 @@ sample.properties. The outcome of executing the sample.plan is that a file is cr
 ######Usage:
 <dl>
   <dt>Standard call</dt>
-  <dd>Automate --plan=/plans/sample.plan --properties=/properties/sample.properties</dd>
+  <dd>`Automate --plan=/plans/sample.plan --properties=/properties/sample.properties`</dd>
 
   <dt>With an override</dt>
-  <dd>Automate --plan=/plans/sample.plan --properties=/properties/sample.properties --override=writeToFiles.append=y</dd>
+  <dd>`Automate --plan=/plans/sample.plan --properties=/properties/sample.properties --override=writeToFiles.append=y`</dd>
 </dl>
 
 ######What to do now?
