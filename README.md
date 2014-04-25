@@ -4,7 +4,7 @@ Automate
 Automate is a framework to automate tasks.
 
 Overview:
-This framework create a predictable way to automate tasks.  Tasks can be chained together into a .plan which will execute
+This framework creates a predictable way to automate tasks.  Tasks can be chained together into a .plan which will execute
 any number of steps.  A step is any code that extends org.tinytelly.steps.Step.  A step is configured by setting the step
 properties in a .properties file.
 
@@ -17,7 +17,7 @@ Usage:
 org.tinytelly.Automate --plan=/plans/sample.plan --properties=/properties/sample.properties
 
 What to do now?
-write your own steps (to do anything), configure them via .properties and run them as a .plan.
+write your own Steps (to do anything), configure them via .properties and run them as a .plan.
 
 
 
