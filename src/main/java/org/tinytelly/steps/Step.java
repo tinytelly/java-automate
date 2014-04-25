@@ -24,8 +24,8 @@ public abstract class Step {
 
     /*
     The identifier is a way to pair a step in a plan with a property.
-    In the Plan : runCommandLine trigproc where trigproc is the identifier
-    In the Properties : runCommandLine.trigproc
+    In the Plan : createFiles testfile where testfile is the identifier
+    In the Properties : createFiles.testfile
      */
     public String identifier;
 
@@ -62,18 +62,6 @@ public abstract class Step {
         return this;
     }
 
-    /*
-    This is just used for logging reasons.  It will show the calling Step name in the logs like this:
-    *****************************************************************
-    STEP: DeleteDirectoriesStep [called from JbossServerSetUpStep ]
-    *****************************************************************
-     */
-    @Deprecated //User addCallingStep
-    public Step addCallingStepName(Step step) {
-        this.callingStepName = step.getClass().getSimpleName();
-        return this;
-    }
-
     public Step addCallingStep(Step step) {
         this.callingStepName = step.getClass().getSimpleName();
         addPayload(step.payLoad);
@@ -91,16 +79,6 @@ public abstract class Step {
 
     public boolean hasPayLoad() {
         return this.payLoad == null ? false : true;
-    }
-
-    @Deprecated //Use log instead
-    public void addResult(String result) {
-        if (this.result == null) {
-            this.result = result;
-        } else {
-            this.result += result;
-        }
-        this.result += PropertyConstants.NEW_LINE;
     }
 
     public void log(String result) {
@@ -131,7 +109,7 @@ public abstract class Step {
                     if (stepName.equals(payloadStepName)) {
                         ApplicationContext context = new ClassPathXmlApplicationContext("application-context.xml");
                         payloadStep = context.getBean(PayloadStep.class);
-                        payloadStep.doWork(this);
+                        payloadStep.addCallingStep(this).doWork();
                         payloadRunSteps.add(payloadStepName);
                         jsonProvidedForStep = true;
                         break;
@@ -174,21 +152,6 @@ public abstract class Step {
 
     public abstract void doStep() throws Exception;
 
-    public void doWork(PropertiesService propertiesService, LogService logService, PayLoad payLoad) throws Exception {
-        this.propertiesService = propertiesService;
-        this.logService = logService;
-        this.payLoad = payLoad;
-        doWork();
-    }
-
-    @Deprecated
-    public void doWork(Step step) throws Exception {
-        this.propertiesService = step.propertiesService;
-        this.logService = step.logService;
-        this.payLoad = step.payLoad;
-        doWork();
-    }
-
     public boolean containsError() {
         return this.error.equals(EMPTY) ? false : true;
     }
@@ -199,7 +162,9 @@ public abstract class Step {
 
     public static String getStepDisplayText(String stepName) {
         return PropertyConstants.SPACER +
-                "\nSTEP: " + stepName + "\n" +
+                PropertyConstants.NEW_LINE +
+                "STEP: " + stepName +
+                PropertyConstants.NEW_LINE +
                 PropertyConstants.SPACER;
     }
 

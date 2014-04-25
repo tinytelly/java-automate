@@ -86,7 +86,7 @@ public class PlanService {
                 payLoad.addError(step, ExceptionUtils.getStackTrace(e));
             }
         }
-        showRealTimeLogs = propertiesService.showRealTimeLogs();//A common property may have set this in UseBuildInPropertiesFileStep, so reload it here
+        showRealTimeLogs = propertiesService.showRealTimeLogs();
         if (!showRealTimeLogs) {
             System.out.println((payLoad.getResults()));
         }

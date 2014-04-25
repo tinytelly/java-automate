@@ -84,10 +84,6 @@ public class PropertiesService {
         }
 
         addToOverrideProperties(overrideProperties);
-
-        /*for(String property : this.overrideProperties){
-            System.out.println(property);
-        }*/
     }
 
     public void resetOverrideProperties() {
