@@ -15,11 +15,11 @@ There are two steps in org.tinytelly.steps.common.  The are CreateFilesStep and 
 sample.plan file and will be executed one after the other.  The properties to configure those two steps are set in
 sample.properties. The outcome of executing the sample.plan is that a file is created and some text is written to the file.
 
-######Usage:
-#######Standard call
+#####Usage:
+######Standard call
   ```Automate --plan=/plans/sample.plan --properties=/properties/sample.properties```
 
-#######With an override
+######With an override
   ```Automate --plan=/plans/sample.plan --properties=/properties/sample.properties --override=writeToFiles.append=y```
 
 
