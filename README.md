@@ -6,21 +6,21 @@ Automate
 ######Overview:
 
 This framework creates a predictable way to automate tasks.  Tasks can be chained together into a .plan which will execute
-any number of steps.  A step is any code that extends org.tinytelly.steps.Step.  A step is configured by setting the step
+any number of steps.  A step is any code that extends ```org.tinytelly.steps.Step```.  A step is configured by setting the step
 properties in a .properties file.
 
 ######Provided Sample Details:
 
-There are two steps in org.tinytelly.steps.common.  The are CreateFilesStep and WriteToFilesStep.  They are called in the
-sample.plan file and will be executed one after the other.  The properties to configure those two steps are set in
+There are two steps in ```org.tinytelly.steps.common```.  The are ```CreateFilesStep``` and ```WriteToFilesStep```.
+They are called in the sample.plan file and will be executed one after the other.  The properties to configure those two steps are set in
 sample.properties. The outcome of executing the sample.plan is that a file is created and some text is written to the file.
 
-#####Usage:
-**Run a plan**
+######Usage:
+**Run a plan**:
 
   ```Automate --plan=/plans/sample.plan --properties=/properties/sample.properties```
 
-**Run a plan with an override**
+**Run a plan with an override** The override used once and then discarded:
 
   ```Automate --plan=/plans/sample.plan --properties=/properties/sample.properties --override=writeToFiles.append=y```
 
