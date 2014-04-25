@@ -22,7 +22,6 @@ sample.properties. The outcome of executing the sample.plan is that a file is cr
 **Run a plan with an override_**
   ```Automate --plan=/plans/sample.plan --properties=/properties/sample.properties --override=writeToFiles.append=y```
 
-
 ######What to do now?
 
 Write your own Steps (to do anything), configure them via .properties and run them as a .plan.
