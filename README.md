@@ -18,9 +18,9 @@ sample.properties. The outcome of executing the sample.plan is that a file is cr
 ######Usage:
 
 1. Standard call
-⋅⋅*Automate --plan=/plans/sample.plan --properties=/properties/sample.properties
+⋅⋅* Automate --plan=/plans/sample.plan --properties=/properties/sample.properties
 2.With an override
-⋅⋅*Automate --plan=/plans/sample.plan --properties=/properties/sample.properties --override=writeToFiles.append=y
+⋅⋅* Automate --plan=/plans/sample.plan --properties=/properties/sample.properties --override=writeToFiles.append=y
 
 ######What to do now?
 
