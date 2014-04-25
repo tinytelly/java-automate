@@ -16,11 +16,13 @@ sample.plan file and will be executed one after the other.  The properties to co
 sample.properties. The outcome of executing the sample.plan is that a file is created and some text is written to the file.
 
 ######Usage:
+<dl>
+  <dt>Standard call</dt>
+  <dd>Automate --plan=/plans/sample.plan --properties=/properties/sample.properties</dd>
 
-1. Standard call
-⋅⋅* Automate --plan=/plans/sample.plan --properties=/properties/sample.properties
-2.With an override
-⋅⋅* Automate --plan=/plans/sample.plan --properties=/properties/sample.properties --override=writeToFiles.append=y
+  <dt>With an override</dt>
+  <dd>Automate --plan=/plans/sample.plan --properties=/properties/sample.properties --override=writeToFiles.append=y</dd>
+</dl>
 
 ######What to do now?
 
