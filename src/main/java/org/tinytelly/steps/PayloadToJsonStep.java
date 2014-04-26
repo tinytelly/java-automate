@@ -23,7 +23,7 @@ public class PayloadToJsonStep extends Step {
             this.payLoad.append(PlanConstants.PLAN_PAYLOAD_TO_JSON, json);
             this.result = "Payload successfully converted to JSON";
 
-            String writeToDiskLocation = propertiesService.getProperty("payload.to.json.location");
+            String writeToDiskLocation = propertiesService.getProperty("payload.to.json.step.location");
             if (writeToDiskLocation != null) {
                 try {
                     FileUtils.writeStringToFile(new File(writeToDiskLocation), json);

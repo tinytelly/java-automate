@@ -1,0 +1,4 @@
+#This plan will get the current Premier League table output the results as json.
+#The reason for doing this is if you want to provide a payload for a step where you can change the values manually before running the step.
+premierLeagueTableFinder
+payloadToJson

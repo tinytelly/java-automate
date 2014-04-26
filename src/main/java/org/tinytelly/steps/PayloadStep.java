@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.tinytelly.model.PropertyPair;
 import org.tinytelly.service.GsonService;
-import org.tinytelly.util.PlanConstants;
+import org.tinytelly.steps.samples.PremierLeagueTable;
 
 import java.io.File;
 import java.lang.reflect.Type;
@@ -31,8 +31,8 @@ public class PayloadStep extends Step {
 
     private void preparePayload(String destination, String json) {
         Type type = null;
-        if (destination.equals(PlanConstants.PLAN_WRITE_TO_FILES)) {
-            type = new TypeToken<List<String>>() {
+        if (destination.equals("footballResults")) {
+            type = new TypeToken<PremierLeagueTable>() {
             }.getType();
         } else {
             this.error = "This step is not supported for Manual Payload :" + destination;
