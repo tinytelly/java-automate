@@ -17,13 +17,13 @@ They are called in the ```sample.plan``` file and will be executed one after the
 
 ####Usage:
 
-Note all --plan and --properties shown below will have their absolute path append to them like this: [pathto]/plans/ & [pathto]/properties/
+Note all --plan and --properties shown below will have their absolute path appended to them like this: [pathto]/plans/ & [pathto]/properties/
 
 **Run a plan**:
 
   ```Automate --plan=/plans/sample.plan --properties=/properties/sample.properties```
 
-**Run a plan with an override** The override is used once and then discarded. So if you had the same property in a
+**Run a plan with an override**: The override is used once and then discarded. So if you had the same property in a
 .properties file it uses the override on the first call and then use the .properties version for subsequent calls :
 
   ```Automate --plan=/plans/sample.plan --properties=/properties/sample.properties --override=premier.league.table.name=Liga```
