@@ -11,9 +11,9 @@ properties in a .properties file.
 
 ####Provided Sample Details:
 
-There are two steps in ```org.tinytelly.steps.common```.  The are ```CreateFilesStep``` and ```WriteToFilesStep```.
+There are two steps in ```org.tinytelly.steps.samples```, ```PremierLeagueTableFinderStep``` and ```PremierLeagueChampionsLeagueStep```.
 They are called in the ```sample.plan``` file and will be executed one after the other.  The properties to configure those two steps are set in
-```sample.properties```. The outcome of executing the sample.plan is that a file is created and some text is written to the file.
+```sample.properties```. The outcome of executing the sample.plan is that it will get the current Premier League table and determine the teams that are going to the Champions League.
 
 ####Usage:
 
@@ -26,7 +26,7 @@ Note all --plan and --properties shown below will have their absolute path appen
 **Run a plan with an override** The override is used once and then discarded. So if you had the same property in a
 .properties file it uses the override on the first call and then use the .properties version for subsequent calls :
 
-  ```Automate --plan=/plans/sample.plan --properties=/properties/sample.properties --override=writeToFiles.append=y```
+  ```Automate --plan=/plans/sample.plan --properties=/properties/sample.properties --override=premier.league.table.name=Liga```
 
 ####What to do now?
 
