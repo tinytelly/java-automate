@@ -71,6 +71,12 @@ find the next property to use.
   which is accessed in a step like this ```getListOfPropertyPairsFromProperty("premier.league.league.and.season")```
   which returns a ```List<PropertyPair>``` which is accessed like this ```propertyPair.getLeft() and .getRight()```
 
+**Multiple .properties files**:
+  You can provide as many .properties files as you like.  This can help in managing different abstractions of a solution.
+  If the same property is provided in multiple files the last property file loaded via the ```--properties``` argument will be the one that is used.
+  To provide multiple properties files configure the command line line this ```--properties parent.properties&client.properties```
+
+
 ####Payload:
 The ```payload``` is passed from step to step and can be used to pass the result of one step to another.
 It call also be used to pass a payload to an external caller.  You may call automate from an external application (like Spring MVC)
