@@ -48,9 +48,14 @@ This makes it easier to deal with plans that contain lots of properties.
 find the next property to use.
 
   In the file ```sample.plan```
-  is you could have a step called called twice like this (on separate lines)  ```premierLeagueTableFinder premierLeagueTableFinder```
+  you could have a step called called twice like this (on separate lines)  ```premierLeagueTableFinder premierLeagueTableFinder```
   you would then provide properties for the first step like this ```premier.league.table.name.1``` and the second step like this ```premier.league.table.name.2```.
 
+**Property lists**:
+
+  If you want to provide properties that are turned into a ```List<String>```
+  you would set the properties like this ```premier.league.table.name=Premier League | Liga```
+  which is accessed in a step like this ```getPropertyList("premier.league.table.name")```
 
 ####What to do now?
 
