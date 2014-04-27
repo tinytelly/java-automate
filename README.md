@@ -44,6 +44,16 @@ This makes it easier to deal with plans that contain lots of properties.
   you would then link that in the properties file like this ```premier.league.table.name.england```
   and calling ```getProperty("premier.league.table.name")``` will pick up that property.
 
+**Stacked Properties**: you can stack properties by appending a number to the end of a property. Automate will use the number to
+find the next property to use.
+
+  In the file ```sample.plan```
+  is you could have a step called called twice like this
+  ```premierLeagueTableFinder
+   premierLeagueTableFinder```
+  you would then provide properties for the first step like this ```premier.league.table.name.1``` and the second step like this ```premier.league.table.name.2```.
+
+
 ####What to do now?
 
 Write your own Steps (to do anything), configure them via .properties and run them as a .plan.
