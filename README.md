@@ -3,7 +3,7 @@ Automate
 
 ### Automate is a framework to automate tasks.
 
-####Overview:
+####++Overview:
 
 This framework creates a predictable way to automate tasks.  Tasks can be chained together in a .plan which will execute
 any number of steps.  A step is any code that extends ```org.tinytelly.steps.Step```.  A step is configured by setting the step
@@ -40,7 +40,7 @@ Note all --plan and --properties shown below will have their absolute path appen
 This makes it easier to deal with plans that contain lots of properties.
 
   In the file ```sample.plan```
-  is you could have a step called ```premierLeagueTableFinder england``` where england is the identifier.
+  you could have a step called ```premierLeagueTableFinder england``` where england is the identifier.
   you would then link that in the properties file like this ```premier.league.table.name.england```
   and calling ```getProperty("premier.league.table.name")``` will pick up that property.
 
