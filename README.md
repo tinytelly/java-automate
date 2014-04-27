@@ -5,7 +5,9 @@ Automate
 
 ####Overview:
 
-This framework creates a predictable way to automate tasks.  Tasks can be chained together in a .plan which will execute
+This framework creates a predictable way to automate tasks.
+Tasks (Steps in the framework) can be anything. If a computer can do it then it can become a Step.
+Steps are chained together in a ```.plan``` which will execute
 any number of steps.  A step is any code that extends ```org.tinytelly.steps.Step```.  A step is configured by setting the step
 properties in a .properties file.
 
@@ -76,6 +78,12 @@ The example plan file ```sample_to_generate_a_manual_payload.plan``` which calls
 
 The example plan file ```sample_to_use_a_manual_payload.plan``` will use the property ```payload.json``` to populate the payload accessed in ```PremierLeagueChampionsLeagueStep``` via ```payLoad.getMostRecentLoad()```
 This enables you to manually set up a step with predefined data rather then the result of a previous step (which in the sample case would have been ```PremierLeagueTableFinderStep```
+
+####Logging and Error handling?
+
+A step has a method ```log()```. Anything that is logged will be printed out as part of the run of the plan.
+A step has an error log.  If error is populated during a step the plan will stop and the error is printed out.
+Any unhandled exception will be handed as an error by the framework.
 
 ####What to do now?
 

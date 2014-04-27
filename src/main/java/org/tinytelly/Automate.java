@@ -25,11 +25,12 @@ public class Automate {
     private XProperties properties;
     private HashSet<String> overrideProperties = new HashSet<String>();
     private Plan plan;
+    private static boolean exitOnError = false;
 
     public static void main(String... args) {
         Automate automate = new Automate();
         PayLoad payLoad = automate.doWork(args);
-        if (payLoad.hasErrors()) {
+        if (payLoad.hasErrors() && exitOnError) {
             System.exit(-1);//This allows the caller (maybe hudson) to determine if it failed or not
         }
     }
@@ -71,6 +72,14 @@ public class Automate {
                     overrideProperties.add(o);
                 }
             }
+        }
+
+        //Pass in the argument exitOnError if you wish to exit with an error code. Typically only used when running
+        // Automate as a standalone command line application
+        if (ps.containsProperty("exitOnError")) {
+            exitOnError = false;
+        } else {
+            exitOnError = true;
         }
     }
 
