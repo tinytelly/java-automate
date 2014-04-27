@@ -71,6 +71,7 @@ The ```payload``` is passed from step to step and can be used to pass the result
 It call also be used to pass a payload to an external caller.  You may call automate from an external application (like Spring MVC)
 and then use that payload to display the results on a web page.  To do this include the Automate.jar (product of the included maven build)
 and call ```doWork(String... args)``` on ```Automate``` which returns a Payload.  The payload can contain any object you wish.
+To add a new type to be used as a payload you need to the type to ```preparePayload``` in ```PayloadStep```.
 
 **Manually populate a payload for a step**:
 You can manually generate a payload and populate a payload for a step using ``` payloadToJson and payload```
