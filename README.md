@@ -48,9 +48,7 @@ This makes it easier to deal with plans that contain lots of properties.
 find the next property to use.
 
   In the file ```sample.plan```
-  is you could have a step called called twice like this
-  ```premierLeagueTableFinder```
-  ```premierLeagueTableFinder```
+  is you could have a step called called twice like this (on separate lines)  ```premierLeagueTableFinder premierLeagueTableFinder```
   you would then provide properties for the first step like this ```premier.league.table.name.1``` and the second step like this ```premier.league.table.name.2```.
 
 
