@@ -33,9 +33,16 @@ Note all --plan and --properties shown below will have their absolute path appen
 **Standard use**:
 
   In the file ```sample.properties```
-  is the property ```premier.league.table.name=Premier League````
-  which is accessed in a step like this ````getProperty("premier.league.table.name")````
+  is the property ```premier.league.table.name=Premier League```
+  which is accessed in a step like this ```getProperty("premier.league.table.name")```
 
+**Using an Identifier**: you can link a step in a plan file to a property by using an identifier.
+This makes it easier to deal with plans that contain lots of properties.
+
+  In the file ```sample.plan```
+  is you could have a step called ```premierLeagueTableFinder england``` where england is the identifier.
+  you would then link that in the properties file like this ```premier.league.table.name.england```
+  and calling ```getProperty("premier.league.table.name")``` will pick up that property.
 
 ####What to do now?
 
