@@ -3,7 +3,7 @@ Automate
 
 ### Automate is a framework to automate tasks.
 
-####++Overview:
+####Overview:
 
 This framework creates a predictable way to automate tasks.  Tasks can be chained together in a .plan which will execute
 any number of steps.  A step is any code that extends ```org.tinytelly.steps.Step```.  A step is configured by setting the step
