@@ -28,6 +28,15 @@ Note all --plan and --properties shown below will have their absolute path appen
 
   ```Automate --plan=/plans/sample.plan --properties=/properties/sample.properties --override=premier.league.table.name=Liga```
 
+####Properties:
+
+**Standard use**:
+
+  In the file ```sample.properties```
+  is the property ```premier.league.table.name=Premier League````
+  which is accessed in a step like this ````getProperty("premier.league.table.name")````
+
+
 ####What to do now?
 
 Write your own Steps (to do anything), configure them via .properties and run them as a .plan.
