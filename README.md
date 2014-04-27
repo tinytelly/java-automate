@@ -23,12 +23,17 @@ Note all --plan and --properties shown below will have their absolute path appen
 
 **Run a plan**:
 
-  ```Automate --plan=/plans/sample.plan --properties=/properties/sample.properties```
+  ```Automate --[pathto]/plan=sample.plan --properties=[pathto]/sample.properties```
 
 **Run a plan with an override**: The override is used once and then discarded. So if you had the same property in a
 .properties file it uses the override on the first call and then use the .properties version for subsequent calls :
 
-  ```Automate --plan=/plans/sample.plan --properties=/properties/sample.properties --override=premier.league.table.name=Liga```
+  ```Automate --plan=[pathto]/sample.plan --properties=[pathto]/sample.properties --override=premier.league.table.name=Liga```
+
+**Call a plan from any other application**:
+Include the automate.jar in your application and call it the same way as above.
+The return value is a ```org.tinytelly.model.Payload``` where you can ask for a payload by calling ```payload.getLoad(key)``` or ```payload.getMostRecentLoad()```
+You can also get the log by calling ```payload.getResults()```.
 
 ####Properties:
 
