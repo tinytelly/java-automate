@@ -77,9 +77,9 @@ public class Automate {
         //Pass in the argument exitOnError if you wish to exit with an error code. Typically only used when running
         // Automate as a standalone command line application
         if (ps.containsProperty("exitOnError")) {
-            exitOnError = false;
-        } else {
             exitOnError = true;
+        } else {
+            exitOnError = false;
         }
     }
 
