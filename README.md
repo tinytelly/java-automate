@@ -74,7 +74,7 @@ find the next property to use.
 **Multiple .properties files**:
   You can provide as many .properties files as you like.  This can help in managing different abstractions of a solution.
   If the same property is provided in multiple files the last property file loaded via the ```--properties``` argument will be the one that is used.
-  To provide multiple properties files configure the command line line this ```--properties parent.properties&client.properties```
+  To provide multiple properties files configure the command line like this ```--properties parent.properties&client.properties```
 
 
 ####Payload:
@@ -89,7 +89,7 @@ You can manually generate a payload and populate a payload for a step using ``` 
 The example plan file ```sample_to_generate_a_manual_payload.plan``` which calls a step and then outputs the payload as json to the property ```payload.to.json.step.location```
 
 The example plan file ```sample_to_use_a_manual_payload.plan``` will use the property ```payload.json``` to populate the payload accessed in ```PremierLeagueChampionsLeagueStep``` via ```payLoad.getMostRecentLoad()```
-This enables you to manually set up a step with predefined data rather then the result of a previous step (which in the sample case would have been ```PremierLeagueTableFinderStep```
+This enables you to manually set up a step with predefined data rather then the result of a previous step (which in the sample case would have been ```PremierLeagueTableFinderStep```)
 
 ####Logging and Error handling?
 
