@@ -57,6 +57,26 @@ find the next property to use.
   you would set the properties like this ```premier.league.table.name=Premier League | Liga```
   which is accessed in a step like this ```getPropertyList("premier.league.table.name")```
 
+**Property Pair**:
+
+  If you want to provide a Pair which contains a left and right property
+  you would set the properties like this ```premier.league.league.and.season=Premier League ~ 2014 | Liga ~ 2014```
+  which is accessed in a step like this ```getListOfPropertyPairsFromProperty("premier.league.league.and.season")```
+  which returns a ```List<PropertyPair>``` which is accessed like this ```propertyPair.getLeft() and .getRight()```
+
+####Payload:
+The ```payload``` is passed from step to step and can be used to pass the result of one step to another.
+It call also be used to pass a payload to an external caller.  You may call automate from an external application (like Spring MVC)
+and then use that payload to display the results on a web page.  To do this include the Automate.jar (product of the included maven build)
+and call ```doWork(String... args)``` on ```Automate``` which returns a Payload.  The payload can contain any object you wish.
+
+**Manually populate a payload for a step**:
+You can manually generate a payload and populate a payload for a step using ``` payloadToJson and payload```
+The example plan file ```sample_to_generate_a_manual_payload.plan``` which calls a step and then outputs the payload as json to the property ```payload.to.json.step.location```
+
+The example plan file ```sample_to_use_a_manual_payload.plan``` will use the property ```payload.json``` to populate the payload accessed in ```PremierLeagueChampionsLeagueStep``` via ```payLoad.getMostRecentLoad()```
+This enables you to manually set up a step with predefined data rather then the result of a previous step (which in the sample case would have been ```PremierLeagueTableFinderStep```
+
 ####What to do now?
 
 Write your own Steps (to do anything), configure them via .properties and run them as a .plan.
