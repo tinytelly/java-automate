@@ -94,6 +94,7 @@ public class PlanService {
         if (!payLoad.hasErrors()) {
             System.out.println(getPlanDisplayText(plan.getName() + PlanConstants.PLAN_SUCCESSFUL_RUN));
         } else {
+            System.out.println(payLoad.getErrors());
             System.out.println(getPlanDisplayText(plan.getName() + PlanConstants.PLAN_NOT_SUCCESSFULLY_RUN));
         }
         return payLoad;
