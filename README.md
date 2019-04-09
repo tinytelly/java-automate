@@ -3,7 +3,7 @@ Automate
 
 ### Automate is a framework to automate tasks.
 
-####Overview:
+#### Overview:
 
 This framework creates a predictable way to automate tasks.
 Tasks (Steps in the framework) can be anything. If a computer can do it then it can become a Step.
@@ -11,13 +11,13 @@ Steps are chained together in a ```.plan``` which will execute
 any number of steps.  A step is any code that extends ```org.tinytelly.steps.Step```.  A step is configured by setting the step
 properties in a .properties file.
 
-####Provided Sample Details:
+#### Provided Sample Details:
 
 There are two steps in ```org.tinytelly.steps.samples```, ```PremierLeagueTableFinderStep``` and ```PremierLeagueChampionsLeagueStep```.
 They are called in the ```sample.plan``` file and will be executed one after the other.  The properties to configure those two steps are set in
 ```sample.properties```. The outcome of executing the sample.plan is that it will get the current Premier League table and determine the teams that are going to the Champions League.
 
-####Usage:
+#### Usage:
 
 Note all --plan and --properties shown below will have their absolute path appended to them like this: [pathto]/plans/ & [pathto]/properties/
 
@@ -35,7 +35,7 @@ Include the automate.jar in your application and call it the same way as above.
 The return value is a ```org.tinytelly.model.Payload``` where you can ask for a payload by calling ```payload.getLoad(key)``` or ```payload.getMostRecentLoad()```
 You can also get the log by calling ```payload.getResults()```.
 
-####Properties:
+#### Properties:
 
 **Standard use**:
 
@@ -77,7 +77,7 @@ find the next property to use.
   To provide multiple properties files configure the command line like this ```--properties parent.properties&client.properties```
 
 
-####Payload:
+#### Payload:
 The ```payload``` is passed from step to step and can be used to pass the result of one step to another.
 It can also be used to pass a payload to an external caller.  You may call automate from an external application (like Spring MVC)
 and then use that payload to display the results on a web page.  To do this include the Automate.jar (product of the included maven build)
@@ -91,13 +91,13 @@ The example plan file ```sample_to_generate_a_manual_payload.plan``` which calls
 The example plan file ```sample_to_use_a_manual_payload.plan``` will use the property ```payload.json``` to populate the payload accessed in ```PremierLeagueChampionsLeagueStep``` via ```payLoad.getMostRecentLoad()```
 This enables you to manually set up a step with predefined data rather then the result of a previous step (which in the sample case would have been ```PremierLeagueTableFinderStep```)
 
-####Logging and Error handling?
+#### Logging and Error handling?
 
 A step has a method ```log()```. Anything that is logged will be printed out as part of the run of the plan.
 A step has an error log.  If error is populated during a step the plan will stop and the error is printed out.
 Any unhandled exception will be handed as an error by the framework.
 
-####What to do now?
+#### What to do now?
 
 Write your own Steps (to do anything), configure them via .properties and run them as a .plan.
 
